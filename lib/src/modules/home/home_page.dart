@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+
+import 'package:digital_library/src/shared/data/dummy_data.dart';
+import 'package:digital_library/src/shared/widgets/_export_widgets.dart';
+
+class HomePage extends StatefulWidget {
+  static String routeName = "/HomePage";
+
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 10),
+        const SectionWidget(title: 'Os livros mais procurados'),
+        const BookList(),
+        const SectionWidget(title: 'Os autores mais procurados'),
+        AuthorList(authorModels: authorModels),
+      ],
+    );
+  }
+}
