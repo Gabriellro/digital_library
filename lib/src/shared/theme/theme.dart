@@ -23,10 +23,12 @@ abstract class AppTheme {
       iconTheme: const IconThemeData(color: LightColors.iconLight),
       textTheme: customTextThemeLight(),
       cardColor: LightColors.card,
+      brightness: Brightness.light,
       colorScheme: const ColorScheme.light(
         onPrimary: Colors.black,
         primary: AppColors.primary,
         secondary: AppColors.primary,
+        brightness: Brightness.light,
       ),
     );
   }

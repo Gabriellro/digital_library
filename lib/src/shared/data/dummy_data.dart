@@ -1,8 +1,8 @@
 import 'package:digital_library/src/shared/models/_export_models.dart';
 
-final List<InfoModel> infoModels = [
-  const InfoModel.book(data: "4.8", data1: "4", data2: "434")
-];
+// final List<InfoModel> infoModels = [
+//   const InfoModel.book(data: "4.8", data1: "4", data2: "434")
+// ];
 
 final List<AuthorModel> authorModels = [
   //0
@@ -61,137 +61,89 @@ final List<AuthorModel> authorModels = [
   ),
 ];
 
+// final List<int> _covers = [11, 11];
+final List<String> _subjectPlaces = ['11', '11'];
+final List<Authors> _authors = [
+  Authors(
+    author: Author(key: '/authors/OL26320A'),
+    type: Type(
+      key: '/type/author_role',
+    ),
+  ),
+  Authors(
+    author: Author(key: '/authors/OL2878413A'),
+    type: Type(
+      key: '/type/author_role',
+    ),
+  ),
+];
+final List<Author> _author = [Author(key: '')];
+final List<Excerpts> _excerpts = [
+  Excerpts(excerpt: 'excerpt', pages: 'pages', author: _author[0])
+];
+final List<Links> _links = [
+  Links(title: 'title', url: 'ur1l', type: Type(key: 'title'))
+];
+
 final List<BookModel> dummybooks = [
   BookModel(
-    name: "A Sociedade do Anel",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images-na.ssl-images-amazon.com/images/I/61VLT3aMviL._SX321_BO1,204,203,200_.jpg',
-    sinopse:
-        'Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal.Para isso, o hobbit Frodo tem um caminho árduo pela frente, onde encontra',
-    year: 2001,
-    isBookMarked: false,
-    infoModel: infoModels[0],
+    description: Description(
+      type: '/type/text',
+      value:
+          "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell, by chance, into the hands of the hobbit, Bilbo Baggins. From his fastness in the Dark Tower of Mordor, Sauron's power spread far and wide. He gathered all the Great Rings to him, but ever he searched far and wide for the One Ring that would complete his dominion. On his eleventy-first birthday Bilbo disappeared, bequeathing to his young cousin Frodo the Ruling Ring and a perilous quest --- to journey across Middle-earth, deep into the shadow of the Dark Lord, and destroy the Ring by casting it into the Cracks of Doom. THE LORD OF THE RINGS tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard, Merry, Pippin, and Sam, Gimli the Dwarf, Legolas the Elf, Boromir of Gondor, and a tall, mysterious stranger called Strider.",
+    ),
+    links: _links,
+    title: 'The Lord of the Rings',
+    covers: 'https://covers.openlibrary.org/b/id/12003171-L.jpg',
+    subjectPlaces: _subjectPlaces,
+    firstPublishDate: 'September 3, 2001',
+    subjectPeople: _subjectPlaces,
+    key: '/works/OL27448W',
+    authors: _authors,
+    excerpts: _excerpts,
+    subjects: _subjectPlaces,
+    type: Type(key: 'title'),
+    subjectTimes: _subjectPlaces,
+    latestRevision: 94,
+    revision: 94,
+    created: Created(
+      type: '/type/datetime',
+      value: '2009-10-13T02:46:28.838662',
+    ),
+    lastModified: LastModified(
+      type: '/type/datetime',
+      value: '2022-02-05T15:26:38.106995',
+    ),
+    isBookMark: false,
   ),
   BookModel(
-    name: "Heaven",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "SOS",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Tough Love ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Bad Reputation ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Ain't a Thing ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: 'Hold The Line ',
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Freak ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Excuse Me Mr. Sir ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Heart Upon My Sleeve ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Never Leave Me ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
-  ),
-  BookModel(
-    name: "Fades Away ",
-    authorModel: authorModels[0],
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    sinopse:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
-    year: 2006,
-    isBookMarked: false,
-    infoModel: infoModels[0],
+    description: Description(
+      type: '/type/text',
+      value:
+          "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell, by chance, into the hands of the hobbit, Bilbo Baggins. From his fastness in the Dark Tower of Mordor, Sauron's power spread far and wide. He gathered all the Great Rings to him, but ever he searched far and wide for the One Ring that would complete his dominion. On his eleventy-first birthday Bilbo disappeared, bequeathing to his young cousin Frodo the Ruling Ring and a perilous quest --- to journey across Middle-earth, deep into the shadow of the Dark Lord, and destroy the Ring by casting it into the Cracks of Doom. THE LORD OF THE RINGS tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard, Merry, Pippin, and Sam, Gimli the Dwarf, Legolas the Elf, Boromir of Gondor, and a tall, mysterious stranger called Strider.",
+    ),
+    links: _links,
+    title: 'The Lord of the Rings',
+    covers: 'https://covers.openlibrary.org/b/id/12003171-L.jpg',
+    subjectPlaces: _subjectPlaces,
+    firstPublishDate: 'September 3, 2001',
+    subjectPeople: _subjectPlaces,
+    key: '/works/OL27448W',
+    authors: _authors,
+    excerpts: _excerpts,
+    subjects: _subjectPlaces,
+    type: Type(key: 'title'),
+    subjectTimes: _subjectPlaces,
+    latestRevision: 94,
+    revision: 94,
+    created: Created(
+      type: '/type/datetime',
+      value: '2009-10-13T02:46:28.838662',
+    ),
+    lastModified: LastModified(
+      type: '/type/datetime',
+      value: '2022-02-05T15:26:38.106995',
+    ),
+    isBookMark: false,
   ),
 ];

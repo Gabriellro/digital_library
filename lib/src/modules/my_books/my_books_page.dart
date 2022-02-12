@@ -1,13 +1,24 @@
-import 'package:digital_library/src/modules/_export_modules.dart';
-import 'package:digital_library/src/shared/data/dummy_data.dart';
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 
+import '../../shared/data/dummy_data.dart';
 import '../../shared/widgets/_export_widgets.dart';
+import '../_export_modules.dart';
 
-class MyBooksPage extends StatelessWidget {
+enum FilterOptions { all, bookMarked }
+
+class MyBooksPage extends StatefulWidget {
   static String routeName = "/MyBooksPage";
   const MyBooksPage({Key? key}) : super(key: key);
 
+  @override
+  State<MyBooksPage> createState() => _MyBooksPageState();
+}
+
+class _MyBooksPageState extends State<MyBooksPage> {
+  bool _showBookMarkedOnly = false;
+  bool select = false;
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -29,30 +40,20 @@ class MyBooksPage extends StatelessWidget {
         ),
       ),
       actions: [
-        Center(
-          child: Container(
-            height: 36,
-            width: 36,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(100)),
-              border: Border.all(
-                width: 2,
-                color: Colors.black,
-                style: BorderStyle.solid,
-              ),
-            ),
-            child: Icon(
-              Icons.search_rounded,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
+        IconButton(
+          icon: const Icon(Icons.collections_bookmark_rounded),
+          onPressed: () => setState(() {
+            select = !select;
+            if (select == true) {
+              _showBookMarkedOnly = true;
+            } else {
+              _showBookMarkedOnly = false;
+            }
+          }),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 24),
-          child: IconButton(
-            icon: const Icon(Icons.view_module_rounded),
-            onPressed: () {},
-          ),
+        IconButton(
+          icon: const Icon(Icons.view_module_rounded),
+          onPressed: () {},
         ),
       ],
     );
@@ -74,7 +75,10 @@ class MyBooksPage extends StatelessWidget {
           ),
           SizedBox(
             height: availableheight,
-            child: BookSearch(bookModels: dummybooks),
+            child: BookSearch(
+              bookModels: dummybooks,
+              showBookMarked: _showBookMarkedOnly,
+            ),
           )
         ],
       ),
