@@ -1,8 +1,6 @@
 // ignore_for_file: unused_field
 
-import 'package:digital_library/src/shared/providers/_export_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../shared/models/_export_models.dart';
 import '../../shared/widgets/_export_widgets.dart';
@@ -20,6 +18,7 @@ class BookDatatilsPage extends StatefulWidget {
 class _BookDatatilsPageState extends State<BookDatatilsPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
   int _selectedIndex = 0;
   static const List<Tab> _myTabs = <Tab>[
     Tab(text: 'Resenhas'),
@@ -32,10 +31,10 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
   void initState() {
     super.initState();
 
-    Provider.of<BookProvider>(
-      context,
-      listen: false,
-    ).loadBooks();
+    // Provider.of<BookProvider>(
+    //   context,
+    //   listen: false,
+    // ).loadBooks();
 
     _tabController = TabController(length: 4, vsync: this);
     _tabController.addListener(() {
@@ -66,14 +65,12 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
       actions: [
         IconButton(
           icon: Icon(
-            bookModel.isBookMarked == false
+            bookModel.isBookMark == false
                 ? Icons.bookmark_border_rounded
                 : Icons.bookmark_rounded,
           ),
           tooltip: 'Favoritar',
-          onPressed: () => setState(
-            () => bookModel.isBookMarked = !bookModel.isBookMarked,
-          ),
+          onPressed: () => setState(() => bookModel.tooggleBookMarked()),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 16),
@@ -123,7 +120,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.network(
-                                bookModel.imageUrl,
+                                bookModel.covers,
                                 fit: BoxFit.cover,
                                 width: 94,
                                 height: 130,
@@ -137,7 +134,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                                   SizedBox(
                                     width: 150,
                                     child: Text(
-                                      bookModel.name,
+                                      bookModel.title,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                       style:
@@ -148,7 +145,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                                   SizedBox(
                                     width: 140,
                                     child: Text(
-                                      bookModel.authorModel.name,
+                                      bookModel.authors[0].author.key,
                                       overflow: TextOverflow.ellipsis,
                                       style:
                                           Theme.of(context).textTheme.subtitle2,
@@ -158,7 +155,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                                   SizedBox(
                                     width: 140,
                                     child: Text(
-                                      bookModel.year.toString(),
+                                      bookModel.firstPublishDate,
                                       overflow: TextOverflow.ellipsis,
                                       style:
                                           Theme.of(context).textTheme.subtitle2,
@@ -173,11 +170,11 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
-                        child: InfoWidget(
+                        child: const InfoWidget(
                           infoModel: InfoModel.book(
-                            data: bookModel.infoModel.data,
-                            data1: bookModel.infoModel.data1,
-                            data2: bookModel.infoModel.data2,
+                            data: '2',
+                            data1: '2',
+                            data2: '2',
                           ),
                         ),
                       ),
@@ -205,7 +202,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                                     width:
                                         MediaQuery.of(context).size.width - 24,
                                     child: Text(
-                                      bookModel.sinopse,
+                                      bookModel.description.value,
                                       maxLines: 5,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,

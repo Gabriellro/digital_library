@@ -1,5 +1,3 @@
-import 'package:digital_library/src/modules/book_datails/book_datail_page.dart';
-import 'package:digital_library/src/shared/data/dummy_data.dart';
 import 'package:flutter/material.dart';
 
 import 'package:digital_library/src/shared/models/_export_models.dart';
@@ -24,11 +22,11 @@ class AuthorList extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.only(left: 16),
             child: GestureDetector(
-              onTap: () => Navigator.pushNamed(
-                context,
-                BookDatatilsPage.routeName,
-                arguments: dummybooks[index],
-              ),
+              // onTap: () => Navigator.pushNamed(
+              //   context,
+              //   BookDatatilsPage.routeName,
+              //   // arguments: dummybooks[index],
+              // ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
