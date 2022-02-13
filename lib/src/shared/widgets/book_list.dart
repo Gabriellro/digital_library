@@ -14,7 +14,7 @@ class BookList extends StatelessWidget {
     final provider = Provider.of<BookProvider>(context).items;
     final List<BookModel> loadedBooks = provider;
     return SizedBox(
-      height: 178,
+      height: 187,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),

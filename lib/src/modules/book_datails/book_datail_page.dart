@@ -109,21 +109,22 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                 Positioned(
                   top: -40,
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 36),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.network(
                                 bookModel.covers,
                                 fit: BoxFit.cover,
-                                width: 94,
-                                height: 130,
+                                width: 90,
+                                height: 134,
                               ),
                             ),
                             Padding(
@@ -178,37 +179,41 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
                       Stack(
                         clipBehavior: Clip.none,
                         children: [
                           Container(
-                            height: 215,
+                            height: 214,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24),
                               color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const SectionWidget(title: 'Sobre este livro'),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
-                                    horizontal: 24,
-                                  ),
-                                  child: SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width - 24,
-                                    child: Text(
-                                      bookModel.description.value,
-                                      maxLines: 5,
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.left,
-                                      style:
-                                          Theme.of(context).textTheme.bodyText2,
-                                    ),
+                                      horizontal: 24),
+                                  child: Column(
+                                    children: [
+                                      const SizedBox(height: 20),
+                                      const SectionWidget(
+                                          title: 'Sobre este livro'),
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        child: Text(
+                                          bookModel.description.value,
+                                          maxLines: 5,
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyText2,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 TabBar(
@@ -231,34 +236,62 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                             ),
                           ),
                           Positioned(
+                            top: -24,
                             right: 36,
-                            top: -20,
-                            child: FloatingActionButton.extended(
-                              elevation: 0,
-                              icon: const Icon(
-                                Icons.edit_rounded,
-                                color: Colors.white,
-                              ),
-                              label: Text(
-                                'Reservar',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .subtitle1
-                                    ?.copyWith(color: Colors.white),
-                              ),
-                              onPressed: () {
-                                final snackBar = SnackBar(
-                                  content: const Text(
-                                      'Livro reservado com sucesso!'),
-                                  action: SnackBarAction(
-                                    label: 'ok',
-                                    textColor: Theme.of(context).cardColor,
-                                    onPressed: () {},
+                            child: Row(
+                              children: [
+                                ActionChip(
+                                  elevation: 0,
+                                  backgroundColor: Colors.black,
+                                  avatar: const Icon(
+                                    Icons.edit_rounded,
+                                    size: 18,
+                                    color: Colors.white,
                                   ),
-                                );
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(snackBar);
-                              },
+                                  label: Text(
+                                    "Reservar",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .subtitle1
+                                        ?.copyWith(color: Colors.white),
+                                  ),
+                                  padding: const EdgeInsets.all(10),
+                                  onPressed: () {
+                                    final snackBar = SnackBar(
+                                      content: const Text(
+                                          'Livro reservado com sucesso!'),
+                                      action: SnackBarAction(
+                                        label: 'ok',
+                                        textColor: Theme.of(context).cardColor,
+                                        onPressed: () {},
+                                      ),
+                                    );
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
+                                  },
+                                ),
+                                const SizedBox(width: 10),
+                                FloatingActionButton.small(
+                                  elevation: 0,
+                                  child: const Icon(
+                                    Icons.playlist_add_check_outlined,
+                                    color: Colors.white,
+                                  ),
+                                  onPressed: () {
+                                    final snackBar = SnackBar(
+                                      content: const Text(
+                                          'Livro reservado com sucesso!'),
+                                      action: SnackBarAction(
+                                        label: 'ok',
+                                        textColor: Theme.of(context).cardColor,
+                                        onPressed: () {},
+                                      ),
+                                    );
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
+                                  },
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -268,7 +301,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                         height: MediaQuery.of(context).size.height,
                         child: TabBarView(
                           controller: _tabController,
-                          physics: const BouncingScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           children: const [
                             HomePage(),
                             HomePage(),

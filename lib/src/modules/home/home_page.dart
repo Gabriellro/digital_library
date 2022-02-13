@@ -15,15 +15,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 10),
-        const SectionWidget(title: 'Os livros mais procurados'),
-        const BookList(),
-        const SectionWidget(title: 'Os autores mais procurados'),
-        AuthorList(authorModels: authorModels),
-      ],
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: SectionWidget(title: 'Os livros mais procurados'),
+          ),
+          const BookList(),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: SectionWidget(title: 'Os autores mais procurados'),
+          ),
+          AuthorList(authorModels: authorModels),
+        ],
+      ),
     );
   }
 }
