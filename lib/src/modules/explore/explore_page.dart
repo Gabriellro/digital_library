@@ -96,6 +96,7 @@ class _ExplorePageState extends State<ExplorePage>
         MediaQuery.of(context).padding.top -
         appBar.preferredSize.height -
         56;
+
     return DefaultTabController(
       length: _myTabs.length,
       child: Scaffold(
@@ -130,7 +131,7 @@ class _ExplorePageState extends State<ExplorePage>
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
-                    physics: const BouncingScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: const [
                       HomePage(),
                       HomePage(),
