@@ -9,7 +9,7 @@ class BookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bookModel = Provider.of<BookModel>(context);
+    final BookModel bookModel = Provider.of(context);
 
     return Padding(
       padding: const EdgeInsets.only(left: 16),

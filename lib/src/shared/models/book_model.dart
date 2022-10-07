@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class BookModel with ChangeNotifier {
   final Description description;
@@ -21,6 +21,9 @@ class BookModel with ChangeNotifier {
   final Created created;
   final LastModified lastModified;
   bool isBookMark = false;
+  final double rating;
+  final double copys;
+  final int pages;
 
   BookModel({
     required this.description,
@@ -41,6 +44,9 @@ class BookModel with ChangeNotifier {
     required this.created,
     required this.lastModified,
     required this.isBookMark,
+    required this.rating,
+    required this.copys,
+    required this.pages,
   });
 
   void tooggleBookMarked() {
