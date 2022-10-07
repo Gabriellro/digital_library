@@ -12,7 +12,7 @@ class AuthorList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 178,
+      height: 120,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
@@ -21,27 +21,23 @@ class AuthorList extends StatelessWidget {
           final AuthorModel authorModel = authorModels[index];
           return Padding(
             padding: const EdgeInsets.only(left: 16),
-            child: GestureDetector(
-              // onTap: () => Navigator.pushNamed(
-              //   context,
-              //   BookDatatilsPage.routeName,
-              //   // arguments: dummybooks[index],
-              // ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SingerPicWidget.large(pic: authorModel.imageUrl),
-                  const SizedBox(height: 5),
-                  SizedBox(
-                    width: 100,
-                    child: Text(
-                      authorModel.name,
-                      maxLines: 2,
-                      style: Theme.of(context).textTheme.bodyText1,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SingerPicWidget.large(pic: authorModel.imageUrl),
+                const SizedBox(height: 5),
+                SizedBox(
+                  width: 100,
+                  child: Text(
+                    authorModel.name,
+                    maxLines: 2,
+                    style: Theme.of(context)
+                        .textTheme
+                        .caption
+                        ?.copyWith(color: Colors.black),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           );
         },

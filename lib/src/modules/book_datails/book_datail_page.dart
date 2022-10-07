@@ -31,11 +31,6 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
   void initState() {
     super.initState();
 
-    // Provider.of<BookProvider>(
-    //   context,
-    //   listen: false,
-    // ).loadBooks();
-
     _tabController = TabController(length: 4, vsync: this);
     _tabController.addListener(() {
       setState(() {
@@ -53,7 +48,6 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
   @override
   Widget build(BuildContext context) {
     final bookModel = ModalRoute.of(context)!.settings.arguments as BookModel;
-
     final appBar = AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -85,6 +79,11 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
     final availableheight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         appBar.preferredSize.height;
+
+    var _author = '';
+    for (var i = 0; i < bookModel.authors.length; i++) {
+      _author = bookModel.authors[i].author.key;
+    }
 
     return DefaultTabController(
       initialIndex: _selectedIndex,
@@ -146,7 +145,7 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                                   SizedBox(
                                     width: 140,
                                     child: Text(
-                                      bookModel.authors[0].author.key,
+                                      _author,
                                       overflow: TextOverflow.ellipsis,
                                       style:
                                           Theme.of(context).textTheme.subtitle2,
@@ -240,12 +239,10 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                             right: 36,
                             child: Row(
                               children: [
-                                ActionChip(
-                                  elevation: 0,
-                                  backgroundColor: Colors.black,
-                                  avatar: const Icon(
+                                FloatingActionButton.extended(
+                                  onPressed: () {},
+                                  icon: const Icon(
                                     Icons.edit_rounded,
-                                    size: 18,
                                     color: Colors.white,
                                   ),
                                   label: Text(
@@ -255,41 +252,6 @@ class _BookDatatilsPageState extends State<BookDatatilsPage>
                                         .subtitle1
                                         ?.copyWith(color: Colors.white),
                                   ),
-                                  padding: const EdgeInsets.all(10),
-                                  onPressed: () {
-                                    final snackBar = SnackBar(
-                                      content: const Text(
-                                          'Livro reservado com sucesso!'),
-                                      action: SnackBarAction(
-                                        label: 'ok',
-                                        textColor: Theme.of(context).cardColor,
-                                        onPressed: () {},
-                                      ),
-                                    );
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(snackBar);
-                                  },
-                                ),
-                                const SizedBox(width: 10),
-                                FloatingActionButton.small(
-                                  elevation: 0,
-                                  child: const Icon(
-                                    Icons.playlist_add_check_outlined,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () {
-                                    final snackBar = SnackBar(
-                                      content: const Text(
-                                          'Livro reservado com sucesso!'),
-                                      action: SnackBarAction(
-                                        label: 'ok',
-                                        textColor: Theme.of(context).cardColor,
-                                        onPressed: () {},
-                                      ),
-                                    );
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(snackBar);
-                                  },
                                 ),
                               ],
                             ),

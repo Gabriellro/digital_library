@@ -9,4 +9,5 @@ final Map<String, WidgetBuilder> routes = {
   SearchPage.routeName: (context) => const SearchPage(),
   BookDatatilsPage.routeName: (context) => const BookDatatilsPage(),
   RegisterBook.routeName: (context) => const RegisterBook(),
+  ReservationPage.routeName: (context) => const ReservationPage(),
 };

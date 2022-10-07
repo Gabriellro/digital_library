@@ -22,14 +22,14 @@ class SingerPicWidget extends StatelessWidget {
     Key? key,
     this.pic,
     this.onTap,
-  })  : picSize = 100,
+  })  : picSize = 80,
         super(key: key);
 
   const SingerPicWidget.large({
     Key? key,
     this.pic,
     this.onTap,
-  })  : picSize = 130,
+  })  : picSize = 90,
         super(key: key);
 
   @override
@@ -49,7 +49,7 @@ class SingerPicWidget extends StatelessWidget {
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(100),
             topRight: Radius.circular(100),
-            bottomLeft: Radius.circular(24),
+            bottomLeft: Radius.circular(100),
             bottomRight: Radius.circular(100),
           ),
         ),
@@ -57,7 +57,7 @@ class SingerPicWidget extends StatelessWidget {
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(100),
             topRight: Radius.circular(100),
-            bottomLeft: Radius.circular(24),
+            bottomLeft: Radius.circular(100),
             bottomRight: Radius.circular(100),
           ),
           child: Image.network(
@@ -74,7 +74,7 @@ class SingerPicWidget extends StatelessWidget {
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(100),
             topRight: Radius.circular(100),
-            bottomLeft: Radius.circular(24),
+            bottomLeft: Radius.circular(100),
             bottomRight: Radius.circular(100),
           ),
         ),
@@ -82,7 +82,7 @@ class SingerPicWidget extends StatelessWidget {
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(100),
             topRight: Radius.circular(100),
-            bottomLeft: Radius.circular(24),
+            bottomLeft: Radius.circular(100),
             bottomRight: Radius.circular(100),
           ),
           child: Image.network(
