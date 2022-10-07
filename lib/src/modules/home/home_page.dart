@@ -31,6 +31,11 @@ class _HomePageState extends State<HomePage> {
             child: SectionWidget(title: 'Os autores mais procurados'),
           ),
           AuthorList(authorModels: authorModels),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: SectionWidget(title: 'Os livros mais procurados'),
+          ),
+          const BookList(),
         ],
       ),
     );

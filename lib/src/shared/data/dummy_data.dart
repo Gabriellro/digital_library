@@ -1,63 +1,29 @@
 import 'package:digital_library/src/shared/models/_export_models.dart';
 
-// final List<InfoModel> infoModels = [
-//   const InfoModel.book(data: "4.8", data1: "4", data2: "434")
-// ];
-
 final List<AuthorModel> authorModels = [
   //0
   const AuthorModel(
-    name: 'J.R.R. Tolkien',
+    name: 'Nietzsche',
     imageUrl:
-        'https://i.scdn.co/image/ab6761610000e5eb09bf4814c6585e1f69dfeef7',
+        'https://upload.wikimedia.org/wikipedia/commons/1/1b/Nietzsche187a.jpg',
   ),
   //1
   const AuthorModel(
-    name: 'Aloe Blacc',
+    name: 'Carlos Drum...',
     imageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Carlos_Drummond_de_Andrade%2C_1970.tif/lossy-page1-1200px-Carlos_Drummond_de_Andrade%2C_1970.tif.jpg',
   ),
   //2
   const AuthorModel(
-    name: 'Agnes',
+    name: 'Dostoiévski',
     imageUrl:
-        'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1331&q=80',
+        'https://s2.glbimg.com/AWA4Wi1hgE8YTHthEZF8_C8Uusw=/e.glbimg.com/og/ed/f/original/2020/03/04/477px-dostoevskij_1876.jpg',
   ),
   //3
   const AuthorModel(
-    name: 'Vargas & Lagola',
+    name: 'Stephen King',
     imageUrl:
-        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80',
-  ),
-  //4
-  const AuthorModel(
-    name: 'Joe Janiak',
-    imageUrl:
-        'https://images.unsplash.com/photo-1521119989659-a83eee488004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80',
-  ),
-  //5
-  const AuthorModel(
-    name: 'Bonn',
-    imageUrl:
-        'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-  ),
-  //6
-  const AuthorModel(
-    name: 'A R I Z O N A',
-    imageUrl:
-        'https://images.unsplash.com/photo-1519631128182-433895475ffe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-  ),
-  //7
-  const AuthorModel(
-    name: 'Imagine Dragons',
-    imageUrl:
-        'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',
-  ),
-  //8
-  const AuthorModel(
-    name: 'Noonie Bao',
-    imageUrl:
-        'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
+        'https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/08/stephen-king.jpg',
   ),
 ];
 
@@ -65,7 +31,7 @@ final List<AuthorModel> authorModels = [
 final List<String> _subjectPlaces = ['11', '11'];
 final List<Authors> _authors = [
   Authors(
-    author: Author(key: '/authors/OL26320A'),
+    author: Author(key: 'J.R.R. Tolkien'),
     type: Type(
       key: '/type/author_role',
     ),
@@ -87,46 +53,51 @@ final List<Links> _links = [
 
 final List<BookModel> dummybooks = [
   BookModel(
+    type: Type(key: 'title'),
+    key: '/works/OL27448W',
+    covers:
+        'https://books.google.com/books/publisher/content/images/frontcover/R7KuDwAAQBAJ?fife=w200-h300',
+    title: 'O Senhor dos Anéis: A Sociedade do Anel',
+    authors: _authors,
     description: Description(
       type: '/type/text',
       value:
-          "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell, by chance, into the hands of the hobbit, Bilbo Baggins. From his fastness in the Dark Tower of Mordor, Sauron's power spread far and wide. He gathered all the Great Rings to him, but ever he searched far and wide for the One Ring that would complete his dominion. On his eleventy-first birthday Bilbo disappeared, bequeathing to his young cousin Frodo the Ruling Ring and a perilous quest --- to journey across Middle-earth, deep into the shadow of the Dark Lord, and destroy the Ring by casting it into the Cracks of Doom. THE LORD OF THE RINGS tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard, Merry, Pippin, and Sam, Gimli the Dwarf, Legolas the Elf, Boromir of Gondor, and a tall, mysterious stranger called Strider.",
+          "A Sociedade do Anel O volume inicial de O Senhor dos Anéis, lançado originalmente em julho de 1954, foi o primeiro grande épico de fantasia moderno, conquistando milhões de leitores e se tornando o padrão de referência para todas as outras obras do gênero até hoje. A imaginação prodigiosa de J.R.R. Tolkien e seu conhecimento profundo das antigas mitologias da Europa permitiram que ele criasse um universo tão complexo e convincente quanto o mundo real. A Sociedade do Anel começa no Condado, a região rural do oeste da Terra-média onde vivem os diminutos e pacatos hobbits. Bilbo Bolseiro, um dos raros aventureiros desse povo, cujas peripécias foram contadas em O Hobbit, resolve ir embora do Condado e deixa sua considerável herança nas mãos de seu jovem parente Frodo. O mais importante legado de Bilbo é o anel mágico que costumava usar para se tornar invisível. No entanto, o mago Gandalf, companheiro de aventuras do velho hobbit, revela a Frodo que o objeto é o Um Anel, a raiz do poder demoníaco de Sauron, o Senhor Sombrio, que deseja escravizar todos os povos da Terra-média. A única maneira de eliminar a ameaça de Sauron é destruir o Um Anel nas entranhas da própria montanha de fogo onde foi forjado. A revelação faz com que Frodo e seus companheiros hobbits Sam, Merry e Pippin deixem a segurança do Condado e iniciem uma perigosa jornada rumo ao leste. Ao lado de representantes dos outros Povos Livres que resistem ao Senhor Sombrio, eles formam a Sociedade do Anel. Alguém uma vez disse que o mundo dos leitores de língua inglesa se divide entre os que já leram O Senhor dos Anéis e os que um dia lerão o livro. Com esta nova tradução da obra, o fascínio dessa aventura atemporal ficará ainda mais evidente para os leitores brasileiros, tanto os que já conhecem a saga como os que estão prestes a descobrir seu encanto.",
     ),
-    links: _links,
-    title: 'The Lord of the Rings',
-    covers: 'https://covers.openlibrary.org/b/id/12003171-L.jpg',
+    firstPublishDate: 'nov. de 2019',
+    isBookMark: false,
+    rating: 4.9,
+    copys: 14,
+    pages: 576,
     subjectPlaces: _subjectPlaces,
-    firstPublishDate: 'September 3, 2001',
     subjectPeople: _subjectPlaces,
-    key: '/works/OL27448W',
-    authors: _authors,
     excerpts: _excerpts,
+    links: _links,
     subjects: _subjectPlaces,
-    type: Type(key: 'title'),
     subjectTimes: _subjectPlaces,
-    latestRevision: 94,
-    revision: 94,
     created: Created(
       type: '/type/datetime',
       value: '2009-10-13T02:46:28.838662',
     ),
+    latestRevision: 94,
+    revision: 94,
     lastModified: LastModified(
       type: '/type/datetime',
       value: '2022-02-05T15:26:38.106995',
     ),
-    isBookMark: false,
   ),
   BookModel(
     description: Description(
       type: '/type/text',
       value:
-          "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell, by chance, into the hands of the hobbit, Bilbo Baggins. From his fastness in the Dark Tower of Mordor, Sauron's power spread far and wide. He gathered all the Great Rings to him, but ever he searched far and wide for the One Ring that would complete his dominion. On his eleventy-first birthday Bilbo disappeared, bequeathing to his young cousin Frodo the Ruling Ring and a perilous quest --- to journey across Middle-earth, deep into the shadow of the Dark Lord, and destroy the Ring by casting it into the Cracks of Doom. THE LORD OF THE RINGS tells of the great quest undertaken by Frodo and the Fellowship of the Ring: Gandalf the Wizard, Merry, Pippin, and Sam, Gimli the Dwarf, Legolas the Elf, Boromir of Gondor, and a tall, mysterious stranger called Strider.",
+          "Friedrich Nietzsche foi filósofo, escritor, poeta, filólogo e músico e é considerado um dos mais influentes e importantes pensadores modernos do século XIX. A Gaia Ciência (em alemão: Die fröhliche Wissenschaft) é o último trabalho da fase positiva de Nietzsche, aparentando-se a 'Aurora' e a 'Humano, Demasiado Humano' pelo estilo leve, ameno e florido em que é composto. Essa é uma das obras mais lidas do autor. Também é nesse livro que Nietzsche se refere, pela primeira vez, a Zaratustra, antigo profeta persa, criador da doutrina chamada zoroastrismo, tornado por Nietzsche arauto de sua filosofia, em seu livro 'Assim Falou Zaratustra'.",
     ),
     links: _links,
-    title: 'The Lord of the Rings',
-    covers: 'https://covers.openlibrary.org/b/id/12003171-L.jpg',
+    title: 'A Gaia Ciência',
+    covers:
+        'https://books.google.com/books/publisher/content/images/frontcover/lJmNDwAAQBAJ?fife=w200-h300',
     subjectPlaces: _subjectPlaces,
-    firstPublishDate: 'September 3, 2001',
+    firstPublishDate: 'nov. de 2019',
     subjectPeople: _subjectPlaces,
     key: '/works/OL27448W',
     authors: _authors,
@@ -145,5 +116,76 @@ final List<BookModel> dummybooks = [
       value: '2022-02-05T15:26:38.106995',
     ),
     isBookMark: false,
+    rating: 4.9,
+    copys: 14,
+    pages: 576,
+  ),
+  BookModel(
+    description: Description(
+      type: '/type/text',
+      value:
+          '"Se você acha que está tendo dificuldades na vida, precisa ler este livro. Com as lições que a favela nos dá dia após dia, reinventando-se, criando, fazendo muito com pouco e empreendendo com recursos escassos, Rick Chesther nos mostra como, a partir do zero, ou do "menos um", é possível sair da inércia e vencer na vida. A favela venceu traz uma favela que inspira pela coragem, pela força de vontade, pela esperança, pela fé e pelo brilho no olhar. Traz a favela que não se acovarda, que não desiste, que passa por perrengues, mas que se sacode para poder ter dignidade e então criar uma história nova, mesmo nos momentos de maior dor. Este livro mostra que a próxima batalha sempre existirá, mas que precisamos aprender a considerar as tantas vitórias que podem estar passando despercebidas por muitos. A favela venceu é uma lição de vida para quem quer se reerguer, lutar e criar novas possibilidades, contando com gente de verdade que não abandona o outro no meio da batalha. Um livro para entender a mentalidade de "fazer com" na era onde ninguém pode contar com ninguém. Um livro para decifrar que "quando se sabe onde o calo aperta", qualquer pessoa é capaz de tirar um sonho do papel e fazer milagre pra colocar comida na mesa, e desse sonho criar algo novo, inspirar pessoas e prosperar. Um livro para buscar força nas dificuldades e entender o verdadeiro conceito de "vencer na vida". Um livro escrito por gente simples, que estuda em uma universidade chamada "Faculdade da Vida". A favela venceu é um hino a ser celebrado por todos nós, que temos sangue correndo nas veias e não desistimos."',
+    ),
+    links: _links,
+    title: 'A favela venceu',
+    covers:
+        'https://books.google.com/books/publisher/content/images/frontcover/G9jkDwAAQBAJ?fife=w200-h300',
+    subjectPlaces: _subjectPlaces,
+    firstPublishDate: 'mai. de 2020',
+    subjectPeople: _subjectPlaces,
+    key: '/works/OL27448W',
+    authors: _authors,
+    excerpts: _excerpts,
+    subjects: _subjectPlaces,
+    type: Type(key: 'title'),
+    subjectTimes: _subjectPlaces,
+    latestRevision: 94,
+    revision: 94,
+    created: Created(
+      type: '/type/datetime',
+      value: '2009-10-13T02:46:28.838662',
+    ),
+    lastModified: LastModified(
+      type: '/type/datetime',
+      value: '2022-02-05T15:26:38.106995',
+    ),
+    isBookMark: false,
+    rating: 4.9,
+    copys: 14,
+    pages: 576,
+  ),
+  BookModel(
+    description: Description(
+      type: '/type/text',
+      value:
+          'O volume 16 contém os textos publicados por Freud entre 1923 e 1925, dos quais se destaca O Eu e o Id, um de seus principais trabalhos teóricos, no qual faz a mais detalhada exposição da estrutura e do funcionamento da psique, lançando a hipótese de que ela se dividiria em três partes: Id, Eu (ou "ego") e Super-eu (ou "superego"). O segundo texto, "Autobiografia", contém, na verdade, poucas informações pessoais. É um relato do desenvolvimento intelectual do autor e de suas contribuições para o surgimento e a elaboração da psicanálise. Ensaios de menor extensão incluídos no volume, mas bastante influentes, são, entre outros, "A dissolução do complexo de Édipo" e "A negação". Este e-book não contém as imagens presentes na edição impressa.',
+    ),
+    links: _links,
+    title: 'O Eu e o Id',
+    covers:
+        'https://books.google.com/books/content/images/frontcover/nMtPgRFim2AC?fife=w200-h300',
+    subjectPlaces: _subjectPlaces,
+    firstPublishDate: 'jun. de 2011',
+    subjectPeople: _subjectPlaces,
+    key: '/works/OL27448W',
+    authors: _authors,
+    excerpts: _excerpts,
+    subjects: _subjectPlaces,
+    type: Type(key: 'title'),
+    subjectTimes: _subjectPlaces,
+    latestRevision: 94,
+    revision: 94,
+    created: Created(
+      type: '/type/datetime',
+      value: '2009-10-13T02:46:28.838662',
+    ),
+    lastModified: LastModified(
+      type: '/type/datetime',
+      value: '2022-02-05T15:26:38.106995',
+    ),
+    isBookMark: false,
+    rating: 4.9,
+    copys: 14,
+    pages: 576,
   ),
 ];
